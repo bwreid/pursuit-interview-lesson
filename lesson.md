@@ -8,13 +8,13 @@ Please complete the following before the lesson begins:
 
 - [ ] Open and then fork this [Repl.it](https://replit.com/@WReidPlayground/PF-LS-Reduce).
 
-- [ ] With whatever time remains, take a look at the `data/products.js` and `data/quantities.js` files inside the **Repl.it**. With a neighbor or on your own, answer the warmup questions presented there.
+- [ ] With a neighbor or on your own, answer the warmup questions presented in the Repl.
 
 ---
 
 ## Learning Objectives
 
-By the end of this in-person lesson, you will be able to:
+By the end of this lesson, you will be able to:
 
 - Explain how the `.reduce()` method accumulates values from an array into a single value.
 - Solve data aggregation problems using the `.reduce()` method.
@@ -108,24 +108,23 @@ With a classmate, complete the following challenges. Once you are done, you may 
   }, {});
   ```
 
-- [ ] Mentally evaluate the following code before running it. How would you describe what this code is doing?
+- [ ] Mentally evaluate the following code, which is structured a bit differently, before running it. How would you describe what this code is doing?
 
   ```js
-  let result = products.reduce(
-    (accumulator, product) => {
-      const { name, priceInCents } = product;
-      if (priceInCents < 2500) {
-        accumulator.affordable.push(product);
-      } else {
-        accumulator.tooExpensive.push(product);
-      }
-      return accumulator;
-    },
-    { affordable: [], tooExpensive: [] }
-  );
+  const initialValue = { affordable: [], tooExpensive: [] };
+  const reducer = (accumulator, product) => {
+    const { name, priceInCents } = product;
+    if (priceInCents < 2500) {
+      accumulator.affordable.push(product);
+    } else {
+      accumulator.tooExpensive.push(product);
+    }
+    return accumulator;
+  };
+  let result = products.reduce(reducer, initialValue);
   ```
 
-- [ ] Using the `.reduce()` method, write code that returns a boolean as to whether or not any product's `priceInCents` is less than `1500`. The end result should be `true`.
+- [ ] Using the `.reduce()` method, write code that returns a boolean that represents whether or not any product's `priceInCents` is less than `1500`. The end result should be `true`.
 
 - [ ] Using the `.reduce()` method, write code that returns an object where the keys are IDs and the value is an object with the product's `name` and `priceInCents`. The end result should look like the following:
   ```js

@@ -19,6 +19,8 @@ You can also use `npm run test-watch` to use the `--watch` flag for jest.
 
 In order to complete this checkpoint you must write functions to return data formatted in a specific way. While doing so, you must make use of the `.reduce()` method while not using other methods like `.forEach()`, `.map()`, or `.filter()`.
 
+Once you have completed this checkpoint, create a pull request against the main repository.
+
 ### Datasets
 
 You will be working with two different datasets:

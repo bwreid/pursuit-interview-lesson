@@ -104,12 +104,12 @@ Step-by-step, this is what is happening with the `.reduce()` section of the code
 
 This process results in the following changes to the accumulator at each iteration:
 
-| Index | Accumulator when returned |
-| ----- | ------------------------- |
-| 0     | `[4400]`                  |
-| 1     | `[4400, 1000]`            |
-| 2     | `[4400, 1000, 890]`       |
-| 3     | `[4400, 1000, 890]`       |
+| Index | `accumulator` at the end of each iteration |
+| ----- | ------------------------------------------ |
+| 0     | `[4400]`                                   |
+| 1     | `[4400, 1000]`                             |
+| 2     | `[4400, 1000, 890]`                        |
+| 3     | `[4400, 1000, 890]`                        |
 
 <details>
   <summary>🔷 Try this</summary>
@@ -150,7 +150,7 @@ Try running the following Repl.it which includes two more examples of using the 
 
 ### Omitting the initial value
 
-The initial value is actually an optional value when using the `.reduce()` method. If you omit this value, on the first iteration the `accumulator` will be the value at index `0` while the current value will be the value at index `1`.
+The initial value is actually an optional value when using the `.reduce()` method. If you omit this value, on the first iteration the `accumulator` will be the value at index `0` while the current value will be the value at index `1`. The value returned then becomes the accumulator on each subsequent iteration.
 
 When this is the case, you may see the accumulator value referred to as `previous` and the current value referred to as `current`. This can lead to very concise code.
 
@@ -209,6 +209,7 @@ In the above code, the following occurs:
    A new variable of `result` is declared, assigned to the return value of the `.reduce()` method.
 
 1. `products.reduce((accumulator, product) => { ... }, initialValue);`
+
    The `.reduce()` method is called, and the reducer function makes use of the `accumulator` and a variable to represent the current element, `product`. The initial value is also passed in.
 
 1. `const { name, priceInCents } = product;`
@@ -233,7 +234,7 @@ Try running the following Repl.it which includes a more complex example of the a
 - How would you describe what this code does?
 - If you were to wrap this code in a function, what name would you give to that function?
 
-→ [Example: Different Accumulators](https://replit.com/@WReidPlayground/PF-EX-Reduce-Different-Accumulators?lite=1)
+→ [Example: Complex Object](https://replit.com/@WReidPlayground/PF-EX-Reduce-Complex-Object?lite=1)
 
 </details>
 
